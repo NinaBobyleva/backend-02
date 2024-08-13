@@ -6,4 +6,4 @@ const getUsers = () => {
     return fs.readFileSync(filePath);
 }
 
-module.exports = getUsers();
+module.exports = getUsers;

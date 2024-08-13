@@ -36,7 +36,7 @@ const server = http.createServer((request, response) => {
 
       break;
 
-    case "/?hello=":
+    case "/?hello":
       response.status = 400;
       response.statusMessage = "Bad Request";
       response.header = "Content-type: text/plain";
