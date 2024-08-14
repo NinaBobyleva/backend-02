@@ -9,7 +9,7 @@ const server = http.createServer((request, response) => {
   const userName = url.searchParams.get("hello");
 
   if (userName) {
-    response.statusCode = 200;
+    response.status = 200;
     response.statusMessage = "ok";
     response.header = "Content-Type: text/plain";
     response.write(`Hello, my friend ${userName}`);
@@ -28,7 +28,7 @@ const server = http.createServer((request, response) => {
       break;
 
     case "/?users":
-      response.status = 200;
+      response.statusCode = 200;
       response.statusMessage = "OK";
       response.header = "Content-type: application/json";
       response.write(getUsers());
@@ -37,7 +37,7 @@ const server = http.createServer((request, response) => {
       break;
 
     case "/?hello":
-      response.status = 400;
+      response.statusCode = 400;
       response.statusMessage = "Bad Request";
       response.header = "Content-type: text/plain";
       response.write("Enter a name");
